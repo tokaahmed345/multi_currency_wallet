@@ -34,12 +34,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.multi_currencywallet.feature.model.Currency
-import com.example.multi_currencywallet.feature.model.fakeCurrencies
+import com.example.multi_currencywallet.core.model.Currency
+import com.example.multi_currencywallet.core.util.CurrencyMapper
 import com.example.multi_currencywallet.feature.favorites.ui.components.EmptyFavorites
 import com.example.multi_currencywallet.feature.favorites.ui.components.PairCard
 import kotlinx.coroutines.launch
-// ===== Model + داتا ثابتة (مؤقتًا في نفس الملف) =====
 
 data class FavoritePair(
     val from: Currency,
@@ -50,17 +49,15 @@ data class FavoritePair(
     val id: String get() = "${from.code}${to.code}"
 }
 
-private fun cur(code: String) = fakeCurrencies.first { it.code == code }
+private fun cur(code: String) = CurrencyMapper.fromCode(code)
 
 private fun initialPairs() = listOf(
-    FavoritePair(cur("USD"), cur("EGP"), 48.13, "+0.12%"),
-    FavoritePair(cur("EUR"), cur("EGP"), 52.04, "+0.08%"),
-    FavoritePair(cur("GBP"), cur("EGP"), 61.60, "+0.21%"),
-    FavoritePair(cur("SAR"), cur("EGP"), 12.83, "+0.05%"),
-    FavoritePair(cur("USD"), cur("EUR"), 0.92, "+0.12%")
+    FavoritePair(cur("USD"), cur("EUR"), 0.89, "+0.12%"),
+    FavoritePair(cur("EUR"), cur("GBP"), 0.87, "+0.08%"),
+    FavoritePair(cur("GBP"), cur("USD"), 1.31, "+0.21%"),
+    FavoritePair(cur("USD"), cur("JPY"), 149.50, "+0.05%"),
+    FavoritePair(cur("EUR"), cur("CHF"), 0.94, "+0.10%")
 )
-
-// ===== الشاشة =====
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

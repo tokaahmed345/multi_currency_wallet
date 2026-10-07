@@ -29,7 +29,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.multi_currencywallet.feature.model.Currency
+import com.example.multi_currencywallet.core.model.Currency
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

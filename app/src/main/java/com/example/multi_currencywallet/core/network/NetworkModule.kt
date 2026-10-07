@@ -1,4 +1,5 @@
 package com.example.multi_currencywallet.core.network
+
 import com.example.multi_currencywallet.feature.converter.data.remote.RatesApi
 import dagger.Module
 import dagger.Provides

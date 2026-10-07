@@ -34,7 +34,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.multi_currencywallet.core.components.CurrencyChip
-import com.example.multi_currencywallet.feature.model.Currency
+import com.example.multi_currencywallet.core.model.Currency
 import com.example.multi_currencywallet.core.theme.Violet
 import com.example.multi_currencywallet.core.theme.VioletLight
 
@@ -44,6 +44,8 @@ fun ConversionCard(
     onAmountChange: (String) -> Unit,
     fromCurrency: Currency,
     toCurrency: Currency,
+    resultText: String,
+    rateText: String,
     onSelectFromCurrency: () -> Unit,
     onSelectToCurrency: () -> Unit,
     onSwapCurrencies: () -> Unit,
@@ -57,7 +59,6 @@ fun ConversionCard(
             .padding(24.dp)
     ) {
         Column {
-            // You send
             Text(
                 text = "You send",
                 fontSize = 14.sp,
@@ -89,7 +90,6 @@ fun ConversionCard(
             HorizontalDivider(color = Color.White.copy(alpha = 0.3f), thickness = 1.dp)
             Spacer(modifier = Modifier.height(16.dp))
 
-            // They receive
             Text(
                 text = "They receive",
                 fontSize = 14.sp,
@@ -102,7 +102,7 @@ fun ConversionCard(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "48,125.50", // ثابت مؤقتًا
+                    text = resultText,
                     fontSize = 32.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.White
@@ -112,13 +112,12 @@ fun ConversionCard(
 
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = "1 ${fromCurrency.code} = 48.13 ${toCurrency.code}",
+                text = rateText,
                 fontSize = 12.sp,
                 color = Color.White.copy(alpha = 0.8f)
             )
         }
 
-        // Swap button
         Box(
             modifier = Modifier
                 .align(Alignment.Center)

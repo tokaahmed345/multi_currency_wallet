@@ -1,6 +1,5 @@
 package com.example.multi_currencywallet.core.error
 
-
 sealed class Failure(open val message: String) {
     data object NoInternet : Failure("No internet connection")
     data object Timeout : Failure("Request timed out")

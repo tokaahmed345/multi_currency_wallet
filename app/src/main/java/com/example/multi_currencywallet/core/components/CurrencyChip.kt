@@ -18,7 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.multi_currencywallet.feature.model.Currency
+import com.example.multi_currencywallet.core.model.Currency
 
 @Composable
 fun CurrencyChip(
