@@ -1,6 +1,5 @@
 package com.example.multi_currencywallet.feature.favorites.ui.components
 
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
@@ -24,8 +23,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.multi_currencywallet.core.theme.Mint
-import com.example.multi_currencywallet.feature.favorites.ui.FavoritePair
+import com.example.multi_currencywallet.core.util.CurrencyMapper
+import com.example.multi_currencywallet.feature.favorites.domain.entity.FavoritePair
+
 @Composable
 fun PairCard(
     pair: FavoritePair,
@@ -44,11 +44,13 @@ fun PairCard(
             .padding(horizontal = 16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // الأعلام فوق بعض
         Box(modifier = Modifier.width(64.dp).height(44.dp)) {
-            FlagCircle(flag = pair.from.flag, modifier = Modifier.align(Alignment.CenterStart))
             FlagCircle(
-                flag = pair.to.flag,
+                flag = CurrencyMapper.flagFor(pair.base),
+                modifier = Modifier.align(Alignment.CenterStart)
+            )
+            FlagCircle(
+                flag = CurrencyMapper.flagFor(pair.target),
                 modifier = Modifier
                     .align(Alignment.CenterStart)
                     .offset(x = 22.dp)
@@ -60,13 +62,13 @@ fun PairCard(
 
         Column(modifier = Modifier.weight(1f)) {
             Text(
-                text = "${pair.from.code} / ${pair.to.code}",
+                text = "${pair.base} / ${pair.target}",
                 fontSize = 16.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = colors.onSurface
             )
             Text(
-                text = "Updated 2 min ago",
+                text = "Saved rate",
                 fontSize = 13.sp,
                 color = colors.onSurfaceVariant
             )
@@ -80,9 +82,9 @@ fun PairCard(
                 color = colors.onSurface
             )
             Text(
-                text = "▲ ${pair.change}",
+                text = "1 ${pair.base}",
                 fontSize = 12.sp,
-                color = Mint
+                color = colors.onSurfaceVariant
             )
         }
     }
@@ -101,6 +103,5 @@ private fun FlagCircle(flag: String, modifier: Modifier = Modifier) {
     }
 }
 
-// الأسعار الصغيرة (زي 0.0208) بتتعرض بـ4 خانات
 private fun formatRate(rate: Double): String =
     if (rate < 1.0) "%.4f".format(rate) else "%.2f".format(rate)

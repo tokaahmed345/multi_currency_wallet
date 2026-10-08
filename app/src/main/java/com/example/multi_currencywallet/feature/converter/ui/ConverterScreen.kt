@@ -33,7 +33,6 @@ fun ConverterScreen(
     var selectedQuickAmount by remember { mutableStateOf(1000) }
     var showSheet by remember { mutableStateOf(false) }
     var selectingForSend by remember { mutableStateOf(true) }
-    var isSaved by remember { mutableStateOf(false) }
 
     val quickAmounts = listOf(10, 50, 100, 500, 1000)
 
@@ -93,8 +92,8 @@ fun ConverterScreen(
         Spacer(modifier = Modifier.weight(1f))
 
         AddToFavoritesButton(
-            isSaved = isSaved,
-            onClick = { isSaved = !isSaved }
+            isSaved = state.isSaved,
+            onClick = viewModel::onToggleFavorite
         )
 
         Spacer(modifier = Modifier.height(10.dp))

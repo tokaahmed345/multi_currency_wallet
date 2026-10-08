@@ -24,7 +24,7 @@ import androidx.compose.material3.SwipeToDismissBoxValue
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberSwipeToDismissBoxState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -34,38 +34,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.multi_currencywallet.core.model.Currency
-import com.example.multi_currencywallet.core.util.CurrencyMapper
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.multi_currencywallet.feature.favorites.ui.components.EmptyFavorites
 import com.example.multi_currencywallet.feature.favorites.ui.components.PairCard
 import kotlinx.coroutines.launch
-
-data class FavoritePair(
-    val from: Currency,
-    val to: Currency,
-    val rate: Double,
-    val change: String
-) {
-    val id: String get() = "${from.code}${to.code}"
-}
-
-private fun cur(code: String) = CurrencyMapper.fromCode(code)
-
-private fun initialPairs() = listOf(
-    FavoritePair(cur("USD"), cur("EUR"), 0.89, "+0.12%"),
-    FavoritePair(cur("EUR"), cur("GBP"), 0.87, "+0.08%"),
-    FavoritePair(cur("GBP"), cur("USD"), 1.31, "+0.21%"),
-    FavoritePair(cur("USD"), cur("JPY"), 149.50, "+0.05%"),
-    FavoritePair(cur("EUR"), cur("CHF"), 0.94, "+0.10%")
-)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FavoritesScreen(
     onGoToConverter: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    viewModel: FavoritesViewModel = hiltViewModel()
 ) {
-    val pairs = remember { mutableStateListOf<FavoritePair>().apply { addAll(initialPairs()) } }
+    val pairs by viewModel.favorites.collectAsStateWithLifecycle()
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
 
@@ -99,15 +81,14 @@ fun FavoritesScreen(
                         val dismissState = rememberSwipeToDismissBoxState(
                             confirmValueChange = { value ->
                                 if (value == SwipeToDismissBoxValue.EndToStart) {
-                                    val index = pairs.indexOf(pair)
-                                    pairs.remove(pair)
+                                    viewModel.remove(pair)
                                     scope.launch {
                                         val result = snackbarHostState.showSnackbar(
                                             message = "Pair removed",
                                             actionLabel = "Undo"
                                         )
                                         if (result == SnackbarResult.ActionPerformed) {
-                                            pairs.add(index.coerceAtMost(pairs.size), pair)
+                                            viewModel.undo(pair)
                                         }
                                     }
                                     true
