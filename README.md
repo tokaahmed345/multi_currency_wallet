@@ -4,7 +4,13 @@
   A clean, minimal currency converter for Android, built with <b>Kotlin</b> and <b>Jetpack Compose</b>,<br/>
   following <b>Clean Architecture</b> and <b>MVVM</b>.
 </p>
-
+<p align="center">
+  <img src="https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white" alt="Kotlin"/>
+  <img src="https://img.shields.io/badge/Jetpack%20Compose-4285F4?logo=jetpackcompose&logoColor=white" alt="Jetpack Compose"/>
+  <img src="https://img.shields.io/badge/Hilt-Dagger-2E7D32" alt="Hilt"/>
+  <img src="https://img.shields.io/badge/Room-Database-5B3DF5" alt="Room"/>
+  <img src="https://img.shields.io/badge/Retrofit-REST-00C2A8" alt="Retrofit"/>
+</p>
 <h2>Screenshots</h2>
 
 https://github.com/user-attachments/assets/4d3cccf4-042f-4312-8c66-8c2c611e8c5f
