@@ -110,7 +110,7 @@ UI (Compose) → ViewModel → UseCase → Repository (interface)
 
 <ol>
   <li>Clone the repository:
-<pre>git clone https://github.com/tokaahmed345/currency-wallet.git</pre>
+<pre>git clone https://github.com/tokaahmed345/multi_currency_wallet</pre>
   </li>
   <li>Open it in <b>Android Studio</b> (latest stable).</li>
   <li>Sync Gradle and run on an emulator or a device.</li>
@@ -131,5 +131,4 @@ UI (Compose) → ViewModel → UseCase → Repository (interface)
 <p>
   <b>Toka Ahmed Elsharkawy</b><br/>
   <a href="https://www.linkedin.com/in/toka-elshrkawy-3822aa290/">LinkedIn</a> ·
-  <a href="https://github.com/tokaahmed345">GitHub</a>
 </p>
