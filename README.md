@@ -13,7 +13,9 @@
 </p>
 <h2>Screenshots</h2>
 
-https://github.com/user-attachments/assets/4d3cccf4-042f-4312-8c66-8c2c611e8c5f
+
+https://github.com/user-attachments/assets/5ff68b1a-eccc-408c-b3d6-9c2e2dfc7b77
+
 
 <p align="center">
  <img width="200" alt="screenshot-rocks (16)" src="https://github.com/user-attachments/assets/164b30b9-d28e-4d54-bec9-a9283f3f1a2a" />
