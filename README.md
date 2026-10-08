@@ -6,7 +6,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Kotlin-7F52FF?logo=kotlin&logoColor=white" alt="Kotlin"/>
+ <img width="200" alt="screenshot-rocks (16)" src="https://github.com/user-attachments/assets/164b30b9-d28e-4d54-bec9-a9283f3f1a2a" />
+
   <img src="https://img.shields.io/badge/Jetpack%20Compose-4285F4?logo=jetpackcompose&logoColor=white" alt="Jetpack Compose"/>
   <img src="https://img.shields.io/badge/Hilt-Dagger-2E7D32" alt="Hilt"/>
   <img src="https://img.shields.io/badge/Room-Database-5B3DF5" alt="Room"/>
