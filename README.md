@@ -5,30 +5,24 @@
   following <b>Clean Architecture</b> and <b>MVVM</b>.
 </p>
 
+<h2>Screenshots</h2>
+
+https://github.com/user-attachments/assets/4d3cccf4-042f-4312-8c66-8c2c611e8c5f
+
 <p align="center">
  <img width="200" alt="screenshot-rocks (16)" src="https://github.com/user-attachments/assets/164b30b9-d28e-4d54-bec9-a9283f3f1a2a" />
 
-  <img src="https://img.shields.io/badge/Jetpack%20Compose-4285F4?logo=jetpackcompose&logoColor=white" alt="Jetpack Compose"/>
-  <img src="https://img.shields.io/badge/Hilt-Dagger-2E7D32" alt="Hilt"/>
-  <img src="https://img.shields.io/badge/Room-Database-5B3DF5" alt="Room"/>
-  <img src="https://img.shields.io/badge/Retrofit-REST-00C2A8" alt="Retrofit"/>
+<img width="200" alt="screenshot-rocks (17)" src="https://github.com/user-attachments/assets/58cbe49e-95a5-4202-9c3f-528fe360a452" />
+
+ <img width="200" alt="screenshot-rocks (18)" src="https://github.com/user-attachments/assets/1cf6d938-3a59-4dfb-b750-ae8918d39d2c" />
+<img width="200" alt="screenshot-rocks (19)" src="https://github.com/user-attachments/assets/b3e84876-9f1a-411a-b1fa-146b25e7c4cc" />
+
 </p>
 
 <hr/>
 
-<h2>Screenshots</h2>
 
-<p align="center">
-  <img src="screenshots/converter_light.png" width="250" alt="Converter (Light)"/>
-  <img src="screenshots/converter_dark.png" width="250" alt="Converter (Dark)"/>
-  <img src="screenshots/favorites.png" width="250" alt="Favorites"/>
-</p>
 
-<p align="center">
-  <img src="screenshots/currency_picker.png" width="250" alt="Currency picker"/>
-  <img src="screenshots/favorites_empty.png" width="250" alt="Empty favorites"/>
-  <img src="screenshots/error_state.png" width="250" alt="Error state"/>
-</p>
 
 <h2>Features</h2>
 
